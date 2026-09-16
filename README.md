@@ -7,6 +7,8 @@ Built with **Electron** + **whatsapp-web.js**. Works with your **personal WhatsA
 ---
 
 ![WhatsApp Status Manager Screenshot](assets/screenshot.png)
+![WhatsApp Status Manager Screenshot](assets/screenshot1.png)
+
 
 ---
 
