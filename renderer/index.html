@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp Status Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Custom title bar -->
+  <div class="titlebar">
+    <div class="titlebar-title">
+      <span class="wa-icon">💬</span> WhatsApp Status Manager
+    </div>
+    <div class="titlebar-controls">
+      <button class="ctrl-btn minimize" id="btn-minimize">─</button>
+      <button class="ctrl-btn maximize" id="btn-maximize">□</button>
+      <button class="ctrl-btn close" id="btn-close">✕</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <!-- Connection Status Card -->
+      <div class="card" id="connection-card">
+        <div class="card-header">Connection</div>
+        <div class="status-indicator" id="status-indicator">
+          <div class="dot disconnected" id="status-dot"></div>
+          <span id="status-text">Disconnected</span>
+        </div>
+        <div id="user-info" class="user-info hidden">
+          <div class="user-name" id="user-name"></div>
+          <div class="user-number" id="user-number"></div>
+        </div>
+        <div id="qr-container" class="qr-container">
+          <div class="qr-label">Scan QR Code with WhatsApp</div>
+          <div id="qr-placeholder" class="qr-placeholder">
+            <div class="spinner"></div>
+            <p>Generating QR code...</p>
+          </div>
+          <img id="qr-image" class="qr-image hidden" alt="QR Code">
+        </div>
+      </div>
+
+      <!-- Auto Reply Toggle -->
+      <div class="card">
+        <div class="card-header">Auto Reply</div>
+        <div class="toggle-row">
+          <span>Enable Auto Reply</span>
+          <label class="toggle">
+            <input type="checkbox" id="auto-reply-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Activity Log -->
+      <div class="card log-card">
+        <div class="card-header">Activity Log</div>
+        <div id="activity-log" class="activity-log">
+          <div class="log-empty">No activity yet...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="card">
+        <div class="card-header">Set Your Status</div>
+        <p class="card-subtitle">Select a status. When active and auto-reply is ON, incoming messages will receive an automatic response.</p>
+
+        <div class="status-grid" id="status-grid">
+          <!-- Status buttons rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Message Editor -->
+      <div class="card" id="message-editor-card">
+        <div class="card-header">Edit Auto-Reply Message</div>
+        <div id="message-editor-content">
+          <p class="select-hint">Select a status above to edit its message</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
